@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="google-site-verification" content="EWOWak0mRoaiZT5Sl9R3Ei0_cIAAGLYCT3jHV6tcgAo" />
+    <meta name="author" content="jakbin" />
+    <meta content="#fff" name="theme-color">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="https://debhub.herokuapp.com/" />
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/favicon.ico">
+    <meta property="keywords" content="deb,debfile,debhub,linux,kde,gnome,apps,desktops,applications" />
+    <meta property="og:url" content="https://debhub.herokuapp.com/" />
+    <meta property="og:title" content="DebHub" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/favicon.ico">
+    <meta name="description" content="the collection of deb files">
+    <meta property="og:description" content="the collection of deb files" />
+    {<title>DebHub</title>
+    <!-- Favicon-->
+    <link rel="sortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="{{ url_for('static', filename='css/my.css')}}" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <!-- <div class="container px-4 px-lg-5"> -->
+        <a class="navbar-brand ms-5" href="/">DebHub</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto topnav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Browse All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/deb/new">Submit new Deb</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+<!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Welcome to DebHub</h1>
+                <p class="lead fw-normal text-white-50 mb-0">This catalog has <span class="aih-underline" id="total"></span> Deb files.</p>
+                <p>Deb are software binary apps which can simply be downloaded &amp; run on debian-based
+                        distribution</p>
+            </div>
+        </div>
+    </header>
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <!-- <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"> -->
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-all.png" alt="total" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                               <h3 class="mt2 mb2">All</h3>
+                                <p id="total"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="category/Audio">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-audio.png" alt="Audio" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                
+                                <h3 class="mt2 mb2">Audio</h3>
+                                
+                                 <p id="audio"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Education">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-education.png" alt="Education" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                 <h3 class="mt2 mb2">Education</h3>
+                                <p id="education"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Games">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-games.png" alt="Games" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="mt2 mb2">Games</h3>
+                                 <p id="games"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Graphics">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-graphics.png" alt="Graphics" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="mt2 mb2">Graphics</h3>
+                                <p id="graphics"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Internet">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-internet.png" alt="Internet" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="mt2 mb2">Internet</h3>
+                                <p id="internet"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Office">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-office.png" alt="Office" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="mt2 mb2">Office</h3>
+                                <p id="office"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Programming">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-programming.png" alt="Programming" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="mt2 mb2">Programming</h3>
+                                <p id="programming"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/System&Tools">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-systools.png" alt="System and Tools" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3 class="mt2 mb2">System &amp; Tools</h3>
+                                <p id="system"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                <a href="category/Video">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        
+                        <img class="card-img-top" src="https://raw.githubusercontent.com/jakbin/DebHub/main/assets/aih-video.png" alt="Video" />
+                        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                               <h3 class="mt2 mb2">Video</h3>
+                                <p id="video"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; debhub 2021</p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function loaddata() {
+            fetch('http://127.0.0.1:5000/loaddata',{            
+                        method: 'GET', })
+            .then(function (response) { return response.json();})
+            .then(function (text) {
+                $('#total').html(text.total);
+                $('#audio').html(text.audio);
+                $('#education').html(text.education);
+                $('#games').html(text.games);
+                $('#graphics').html(text.graphics);
+                $('#internet').html(text.internet);
+                $('#office').html(text.office);
+                $('#system').html(text.system);
+                $('#video').html(text.video);
+            });
+        }
+
+        loaddata();
+    </script>
+</body>
+
+</html>

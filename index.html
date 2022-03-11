@@ -252,13 +252,14 @@
                         method: 'GET', })
             .then(function (response) { return response.json();})
             .then(function (text) {
-                $('#total').html(text.total);
+                $('.total').html(text.total);
                 $('#audio').html(text.audio);
                 $('#education').html(text.education);
                 $('#games').html(text.games);
                 $('#graphics').html(text.graphics);
                 $('#internet').html(text.internet);
                 $('#office').html(text.office);
+                $('#programming').html(text.programming);
                 $('#system').html(text.system);
                 $('#video').html(text.video);
             });
